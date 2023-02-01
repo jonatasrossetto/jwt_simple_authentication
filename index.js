@@ -1,3 +1,6 @@
+require('dotenv-safe').config();
+const jwt = require('jsonwebtoken');
+
 const http = require('http');
 const express = require('express');
 const app = express();
