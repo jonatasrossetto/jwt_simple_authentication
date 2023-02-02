@@ -31,8 +31,9 @@ app.post('/login', (req, res, next) => {
       //auth ok
       console.log('authentication is ok!!')
       const id = 987654321; //esse id viria do banco de dados
+      // token could be a more complex json than this
       const token = jwt.sign({ id }, process.env.SECRET, {
-        expiresIn: 300 // expires in 5min
+        expiresIn: 300 // expires in 5*60s=300s=5min
       });
       return res.json({ auth: true, token: token });
     }
